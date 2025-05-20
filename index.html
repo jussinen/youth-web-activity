@@ -1,50 +1,75 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <title>Youth Web Activity</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/white.css">
+    <meta charset="utf-8">
+    <title>Youth Web Activity</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/white.css">
 </head>
+
 <body>
-  <div class="reveal">
-    <div class="slides">
-      <section><h1>Welcome to Web Dev!</h1></section>
-      <section>
-        <h1>Youth Web Activity</h1>
-        <p>Build your own website in 80 minutes</p>
-        <p><small>We'll learn HTML, CSS, JS, GitHub, and even SQL!</small></p>
-      </section>
-      <section>
-        <h2>How the Internet Works</h2>
-        <ul>
-            <li><strong>Client:</strong> Your browser</li>
-            <li><strong>Server:</strong> A computer that sends you content</li>
-            <li><strong>HTTP:</strong> How browsers talk to servers</li>
-            <li><strong>DNS:</strong> Converts names to IP addresses</li>
-            <li><strong>Port 80 / 443:</strong> Web traffic (HTTP/HTTPS)</li>
-        </ul>
-        <aside class="notes">
-            Show a diagram: "Browser → DNS → Server → Response".
-            Mention http:// vs https:// and what a server is.
-        </aside>
-        </section>
-<section>
-  <h2>Local Web Server</h2>
-  <ol>
-    <li>Create a folder on your desktop</li>
-    <li>Add a file called <code>readme.txt</code></li>
-    <li>Open Command Prompt</li>
-    <li>Run <code>http-server -p 123</code></li>
-    <li>Visit <code>http://localhost:123/readme.txt</code></li>
-  </ol>
-  <aside class="notes">
-    Point out that we just turned our computer into a server!
-  </aside>
-</section>
-<section>
-  <h2>Your First Web Page</h2>
-  <pre><code>&lt;!DOCTYPE html&gt;
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Welcome to Web Dev!</h1>
+            </section>
+            <section>
+                <h1>Youth Web Activity</h1>
+                <p>Build your own website in 80 minutes</p>
+                <p><small>We'll learn HTML, CSS, JS, GitHub, and even SQL!</small></p>
+            </section>
+            <section>
+                <h2>How the Internet Works</h2>
+                <ul>
+                    <li><strong>Client:</strong> Your browser</li>
+                    <li><strong>Server:</strong> A computer that sends you content</li>
+                    <li><strong>HTTP:</strong> How browsers talk to servers</li>
+                    <li><strong>DNS:</strong> Converts names to IP addresses</li>
+                    <li><strong>Port 80 / 443:</strong> Web traffic (HTTP/HTTPS)</li>
+                </ul>
+                <aside class="notes">
+                    Show a diagram: "Browser → DNS → Server → Response".
+                    Mention http:// vs https:// and what a server is.
+                </aside>
+            </section>
+            <section>
+                <h2>How the Internet Works</h2>
+                <img src="assets/how-browser-talks-to-server.png" alt="How your browser talks to a website"
+                    style="max-width: 100%; border: 1px solid #ccc;" />
+                <p><small>This is what happens behind the scenes every time you visit a website.</small></p>
+            </section>
+            <section>
+                <h2>Setup Checklist</h2>
+                <ul>
+                    <li>✅ <strong>Node.js</strong> installed</li>
+                    <li>✅ <strong>Git</strong> installed</li>
+                    <li>✅ <strong>VS Code</strong> or other text editor</li>
+                    <li>✅ <strong>GitHub Account</strong></li>
+                    <li>✅ <strong>Basic Terminal or Command Prompt</strong></li>
+                </ul>
+                <p><small>Make sure you can run <code>node --version</code> and <code>git --version</code></small></p>
+                <aside class="notes">
+                    You can install Git from git-scm.com and Node from nodejs.org. GitHub Desktop can help too.
+                </aside>
+            </section>
+
+            <section>
+                <h2>Local Web Server</h2>
+                <ol>
+                    <li>Create a folder on your desktop</li>
+                    <li>Add a file called <code>readme.txt</code></li>
+                    <li>Open Command Prompt</li>
+                    <li>Run <code>http-server -p 8080</code></li>
+                    <li>Visit <code>http://localhost:8080/readme.txt</code></li>
+                </ol>
+                <aside class="notes">
+                    Point out that we just turned our computer into a server!
+                </aside>
+            </section>
+            <section>
+                <h2>Your First Web Page</h2>
+                <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;&lt;title&gt;My Site&lt;/title&gt;&lt;/head&gt;
 &lt;body&gt;
@@ -52,124 +77,402 @@
   &lt;a href="readme.txt"&gt;Read Me&lt;/a&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-  <p>Save this as <code>index.html</code> and view it in your browser</p>
-</section>
-<section>
-  <h2>Style with HTML</h2>
-  <pre><code>&lt;h1 style="color: red;"&gt;Welcome!&lt;/h1&gt;
-&lt;p class="highlight"&gt;Important note&lt;/p&gt;</code></pre>
-  <p>You can use <code>style=""</code> or define <code>class</code> names for reuse</p>
-</section>
-<section>
-  <h2>Link External Files</h2>
-  <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;
-&lt;script src="main.js"&gt;&lt;/script&gt;</code></pre>
-  <p>This makes your code neater and easier to manage</p>
-</section>
-<section>
-  <h2>GitHub Pages</h2>
-  <ol>
-    <li>Create a GitHub account</li>
-    <li>Install Git on your computer</li>
-    <li>Initialize your folder with <code>git init</code></li>
-    <li>Push your code to a repo named <code>username.github.io</code></li>
-    <li>Visit <code>https://username.github.io</code></li>
-  </ol>
-  <p>Now the world can see your site!</p>
-  <aside class="notes">
-    Show them a real published student site. Mention that changes to main branch will auto-publish.
-  </aside>
-</section>
-<section>
-  <h2>Download a Template</h2>
-  <ol>
-    <li>Go to <a href="https://startbootstrap.com" target="_blank">startbootstrap.com</a></li>
-    <li>Choose a free template</li>
-    <li>Download and extract it</li>
-    <li>Replace your current HTML</li>
-    <li>Push to GitHub again</li>
-  </ol>
-  <p>Instant design upgrade 🎉</p>
-</section>
-<section>
-  <h2>What are Templates?</h2>
-  <ul>
-    <li><strong>Dynamic:</strong> Pages change using code (PHP, ASP.NET)</li>
-    <li><strong>Static:</strong> Pages are generated ahead of time (e.g. Jekyll)</li>
-  </ul>
-  <p>GitHub Pages supports <strong>Jekyll</strong> to turn Markdown into HTML.</p>
-  <pre><code>
-{% raw %}---
-title: My Page
----
-<h1>{{ page.title }}</h1>{% endraw %}
-  </code></pre>
-  <aside class="notes">
-    Explain dynamic sites live on servers. Static sites are great for blogs and portfolios.
-  </aside>
-</section>
-<section>
-  <h2>Is Today a Holiday?</h2>
-  <ul>
-    <li>Add a <code>holidays.json</code> file</li>
-    <li>Use <code>fetch()</code> in JavaScript</li>
-    <li>If today matches, show a Bootstrap callout</li>
-  </ul>
-  <pre><code class="language-js">fetch('holidays.json')
-  .then(res => res.json())
-  .then(holidays => {
-    const today = new Date().toISOString().split('T')[0];
-    const match = holidays.find(h => h.date === today);
-    if (match) {
-      const el = document.createElement('div');
-      el.className = 'alert alert-info';
-      el.innerText = `🎉 It's ${match.name} today!`;
-      document.body.prepend(el);
-    }
-  });</code></pre>
-</section>
-<section>
-  <h2>Search Birthdays with SQL</h2>
-  <ul>
-    <li>We use <code>sql.js</code> to run SQLite in the browser</li>
-    <li>Type a name, see their birthday from a local DB</li>
-    <li>All happens <strong>without a server!</strong></li>
-  </ul>
-  <pre><code class="language-js">const db = new SQL.Database();
-db.run("CREATE TABLE people (name TEXT, birthday TEXT);");
-db.run("INSERT INTO people VALUES ('Alice', '2005-06-15');");
-
-function find(name) {
-  const stmt = db.prepare("SELECT birthday FROM people WHERE name = ?");
-  stmt.bind([name]);
-  while (stmt.step()) {
-    console.log(stmt.getAsObject()); // { birthday: '2005-06-15' }
+                <p>Save this as <code>index.html</code> and view it in your browser</p>
+            </section>
+            <section>
+                <h2>Style with HTML</h2>
+                <p>You can add styles directly using the <code>style</code> attribute.</p>
+                <pre><code>&lt;h1 style="color: red;"&gt;Welcome!&lt;/h1&gt;</code></pre>
+                <p>This changes the color of the text to red.</p>
+                <aside class="notes">
+                    This is called "inline styling" and is a good way to experiment.
+                </aside>
+            </section>
+            <section>
+                <h2>Use a CSS Class</h2>
+                <p>You can write a style once and apply it to many elements using a <code>class</code>.</p>
+                <pre><code>&lt;style&gt;
+  .highlight {
+    background-color: yellow;
+    font-weight: bold;
   }
-  stmt.free();
+&lt;/style&gt;
+
+&lt;p class="highlight"&gt;This is important!&lt;/p&gt;</code></pre>
+                <p>This separates your content from the style.</p>
+                <aside class="notes">
+                    Explain the importance of reusability. Highlight how styles go in the <code>&lt;head&gt;</code> or
+                    top of the page.
+                </aside>
+            </section>
+            <section>
+                <h2>Run Code with JavaScript</h2>
+                <p>JavaScript can make your page interactive.</p>
+                <pre><code>&lt;button onclick="alert('Hello!')"&gt;
+  Click Me
+&lt;/button&gt;</code></pre>
+                <p>When the user clicks the button, a message will pop up.</p>
+                <aside class="notes">
+                    Explain this is browser-native code, and <code>alert()</code> shows a modal box.
+                    Simple, but it’s their first programmatic interaction!
+                </aside>
+            </section>
+
+            <section>
+                <h2>Link External CSS and JavaScript</h2>
+
+                <p>In your <code>index.html</code>:</p>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My Page&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1 class="highlight"&gt;Hello from CSS!&lt;/h1&gt;
+  &lt;button id="clickMe"&gt;Click Me&lt;/button&gt;
+
+  &lt;script src="main.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                <aside class="notes">
+                    Explain that the browser loads CSS and JS files when it sees these tags.
+                    Keeping CSS/JS separate makes your code easier to manage.
+                </aside>
+            </section>
+
+            <section>
+                <h2>Download a Template</h2>
+                <ol>
+                    <li>Go to <a href="https://startbootstrap.com" target="_blank">startbootstrap.com</a></li>
+                    <li>Choose a free template</li>
+                    <li>Download and extract it</li>
+                    <li>Replace your current HTML</li>
+                </ol>
+                <p>Instant design upgrade 🎉</p>
+            </section>
+            <section>
+                <h2>Source Control and Git</h2>
+                <ul>
+                    <li>Keeps track of your code changes</li>
+                    <li>Create versions of your code to save work</li>
+                    <li>Share code with others safely</li>
+                    <li>Popular tools: Git, SVN</li>
+                </ul>
+                <img src="assets/source-control-git.png" alt="Git commit diagram"
+                    style="max-width: 100%; border: 1px solid #ccc;" />
+                <aside class="notes">
+                    Each circle is a commit. You can roll back, branch off, and collaborate.
+                </aside>
+            </section>
+            <section>
+                <h2>Create a GitHub Repository</h2>
+                <ol>
+                    <li>Go to <a href="https://github.com" target="_blank">github.com</a> and sign in</li>
+                    <li>Click <strong>New repository</strong></li>
+                    <li>Choose a name (e.g. <code>my-website</code>)</li>
+                    <li>Don't check README or .gitignore</li>
+                    <li>Click <strong>Create repository</strong></li>
+                    <li>Then run in your folder:</li>
+                </ol>
+                <pre><code>git init
+git add .
+git commit -m "First version"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/my-website.git
+git push -u origin main</code></pre>
+                <p>Now your website is on GitHub!</p>
+            </section>
+            <section>
+                <h2>Enable GitHub Pages</h2>
+                <ol>
+                    <li>Go to your repo on GitHub</li>
+                    <li>Click <strong>Settings</strong></li>
+                    <li>Scroll down to <strong>Pages</strong></li>
+                    <li>Set <strong>Branch</strong> to <code>main</code> and <strong>folder</strong> to
+                        <code>/ (root)</code>
+                    </li>
+                    <li>Click <strong>Save</strong></li>
+                </ol>
+                <p>📣 Your site will be live at <code>https://yourusername.github.io/my-website/</code></p>
+            </section>
+
+            <section>
+                <h2>What Are Templates?</h2>
+                <p>Templates are blueprints for pages.</p>
+                <ul>
+                    <li>They let you show dynamic content (like different names or dates)</li>
+                    <li>You don’t copy and paste whole pages — just fill in the blanks</li>
+                    <li>Templates save time and keep code clean</li>
+                </ul>
+                <aside class="notes">
+                    Ask: “What if I had to make a new HTML file for each person’s name?”
+                    Templates automate that!
+                </aside>
+            </section>
+            <section>
+                <h2>Dynamic Templates</h2>
+                <p>These run on the server — they change the page <strong>when someone visits</strong>.</p>
+                <pre><code>&lt;h1&gt;Welcome &lt;?php echo $name; ?&gt;&lt;/h1&gt;
+&lt;p&gt;Today's date is &lt;?= date("Y-m-d"); ?&gt;&lt;/p&gt;</code></pre>
+                <ul>
+                    <li>Languages: PHP, ASP.NET, Node.js, Python, etc.</li>
+                    <li>Pages are built on request and change based on data or users</li>
+                </ul>
+                <aside class="notes">
+                    Use the analogy of a restaurant: the chef prepares your dish fresh every time — that’s dynamic.
+                </aside>
+            </section>
+            <section>
+                <h2>Static Templates</h2>
+                <p>These build pages <strong>ahead of time</strong> — faster and simpler to host.</p>
+                <pre><code>---
+title: "About"
+---
+
+&lt;h1&gt;{{ page.title }}&lt;/h1&gt;
+&lt;p&gt;Welcome to my site!&lt;/p&gt;</code></pre>
+                <ul>
+                    <li>Used by GitHub Pages and tools like Jekyll or Eleventy</li>
+                    <li>Fast and secure: just HTML, CSS, JS</li>
+                </ul>
+                <aside class="notes">
+                    This is like baking cookies in advance. Ready to serve immediately.
+                </aside>
+            </section>
+            <section>
+                <h2>Get a Jekyll Template</h2>
+                <ol>
+                    <li>Visit <a href="https://github.com/pages-themes"
+                            target="_blank">github.com/pages-themes/minima</a></li>
+                    <li>Click the green <strong>Code</strong> button</li>
+                    <li>Select <strong>Download ZIP</strong></li>
+                    <li>Extract the folder to your project (e.g. <code>jekyll-site</code>)</li>
+                    <li>Delete <code>.github</code>, <code>.git</code>, and LICENSE files if present</li>
+                </ol>
+                <aside class="notes">
+                    GitHub provides starter themes that are Jekyll-compatible. No need to code from scratch.
+                </aside>
+            </section>
+            <section>
+                <h2>Replace Your Website Folder</h2>
+                <ol>
+                    <li>Open your GitHub folder (e.g. <code>my-website</code>)</li>
+                    <li>Copy the files from the Jekyll ZIP into it</li>
+                    <li>Replace any existing <code>index.html</code></li>
+                    <li>Open <code>_config.yml</code> to change the site title and description</li>
+                    <li>Optional: edit <code>index.md</code> to customize the homepage</li>
+                </ol>
+                <pre><code>title: Youth Jekyll Site
+description: My awesome website
+theme: minima</code></pre>
+                <aside class="notes">
+                    Tell them to delete leftover old HTML files that aren't used.
+                </aside>
+            </section>
+            <section>
+                <h2>Push Your Jekyll Site</h2>
+                <p>In the command prompt (inside your site folder):</p>
+                <pre><code>git add .
+git commit -m "Added Jekyll theme"
+git push</code></pre>
+                <p>Now your Jekyll site is uploaded to GitHub!</p>
+                <aside class="notes">
+                    Make sure they’re in the right folder. Git must already be set up.
+                </aside>
+            </section>
+            <section>
+                <h2>Publish with GitHub Pages</h2>
+                <ol>
+                    <li>Go to your repository on GitHub</li>
+                    <li>Click <strong>Settings</strong> → scroll to <strong>Pages</strong></li>
+                    <li>Set source to <strong>main</strong> branch, <strong>/(root)</strong></li>
+                    <li>Click <strong>Save</strong></li>
+                    <li>Your site will be live at:<br>
+                        <code>https://yourusername.github.io/repository-name/</code>
+                    </li>
+                </ol>
+            </section>
+            <section>
+                <h2>Add a New Page</h2>
+                <ol>
+                    <li>Create a new file like <code>about.md</code></li>
+                    <li>Add this content:</li>
+                </ol>
+                <pre><code>---
+layout: page
+title: About Me
+---
+
+This is my About page.</code></pre>
+                <ol start="3">
+                    <li>Commit and push:</li>
+                </ol>
+                <pre><code>git add about.md
+git commit -m "Added About page"
+git push</code></pre>
+                <p>Visit <code>/about</code> on your site!</p>
+            </section>
+
+
+            <section>
+                <h2>Is Today a Holiday?</h2>
+                <p>Use a JSON file to list holidays, and show an alert if today matches.</p>
+
+                <p><strong>holidays.json:</strong></p>
+                <pre><code>[
+  { "date": "2025-12-25", "name": "Christmas" },
+  { "date": "2025-01-01", "name": "New Year’s Day" }
+]</code></pre>
+
+                <p><strong>main.js:</strong></p>
+                <pre><code>document.addEventListener('DOMContentLoaded', () =&gt; {
+  fetch('holidays.json')
+    .then(res =&gt; res.json())
+    .then(holidays =&gt; {
+      const today = new Date().toISOString().split('T')[0];
+      const match = holidays.find(h =&gt; h.date === today);
+      if (match) {
+        const alert = document.createElement('div');
+        alert.className = 'alert alert-info';
+        alert.role = 'alert';
+        alert.innerText = `🎉 Today is ${match.name}!`;
+        document.body.prepend(alert);
+      }
+    });
+});</code></pre>
+
+                <p>Include Bootstrap for alert styling, and make sure this JS is linked at the bottom of your HTML:</p>
+                <pre><code>&lt;script src="main.js"&gt;&lt;/script&gt;</code></pre>
+            </section>
+            <section>
+                <h2>What is a Database?</h2>
+                <ul>
+                    <li>A place to store lots of structured information</li>
+                    <li>Like a giant spreadsheet with rows and columns</li>
+                    <li>Used to quickly find and update data</li>
+                </ul>
+                <p>Examples:</p>
+                <ul>
+                    <li>Usernames and passwords</li>
+                    <li>Product prices</li>
+                    <li>Birthdays and appointments</li>
+                </ul>
+                <aside class="notes">
+                    Compare to Excel or Google Sheets. Each row = a record, each column = a field.
+                </aside>
+            </section>
+            <section>
+                <h2>What is SQL?</h2>
+                <ul>
+                    <li>SQL = <strong>Structured Query Language</strong></li>
+                    <li>It's the language we use to talk to a database</li>
+                    <li>We can ask it questions like:</li>
+                </ul>
+                <pre><code>SELECT * FROM people;</code></pre>
+                <pre><code>SELECT birthday FROM people WHERE name = 'Alice';</code></pre>
+                <p>You get rows back with the answer!</p>
+                <aside class="notes">
+                    It's like asking a question in English — “Give me all people” or “What’s Bob’s birthday?”
+                </aside>
+            </section>
+            <section>
+                <h2>Prepare the Page for SQL in the Browser</h2>
+                <p>We’ll use <strong>sql.js</strong> to run a database inside your browser!</p>
+
+                <h3>📥 Download These Files</h3>
+                <ol>
+                    <li>Go to: <a href="https://github.com/sql-js/sql.js/releases/latest" target="_blank">sql.js
+                            releases</a></li>
+                    <li>Download:
+                        <ul>
+                            <li><code>sql-wasm.js</code></li>
+                            <li><code>sql-wasm.wasm</code></li>
+                        </ul>
+                    </li>
+                    <li>Create a folder called <code>sqljs</code> and place both files inside it</li>
+                </ol>
+
+                <h3>📄 Link sql.js in <code>index.html</code>:</h3>
+                <pre><code>&lt;script src="sqljs/sql-wasm.js"&gt;&lt;/script&gt;
+&lt;script src="main.js"&gt;&lt;/script&gt;</code></pre>
+
+                <aside class="notes">
+                    These files are needed to let SQL run in your browser with WebAssembly. Place them in
+                    <code>sqljs/</code>.
+                </aside>
+            </section>
+            <section>
+                <h2>Set Up the Birthday Alert</h2>
+                <p>This code runs when the page loads and shows a birthday alert if needed.</p>
+
+                <pre><code>document.addEventListener("DOMContentLoaded", async () =&gt; {
+  const SQL = await initSqlJs({ locateFile: file =&gt; `sqljs/${file}` });
+
+  const db = new SQL.Database();
+  db.run("CREATE TABLE people (name TEXT, birthday TEXT);");
+
+  // We'll insert people in the next step
+});</code></pre>
+
+                <p>Later we’ll query the database and display a message if it’s someone’s birthday!</p>
+
+                <aside class="notes">
+                    This prepares the database and runs after the page is ready.
+                </aside>
+            </section>
+            <section>
+                <h2>Check if Today is Someone’s Birthday</h2>
+                <p>Add this inside your script, after setting up the database:</p>
+
+                <pre><code>db.run("INSERT INTO people VALUES ('Alice', '2005-05-19');");
+db.run("INSERT INTO people VALUES ('Bob', '2006-12-22');");
+
+const today = new Date().toISOString().slice(5, 10); // MM-DD
+
+const result = db.exec(
+  "SELECT name FROM people WHERE substr(birthday, 6, 5) = ?",
+  [today]
+);
+
+if (result.length &gt; 0) {
+  const names = result[0].values.map(row =&gt; row[0]).join(", ");
+  const alert = document.createElement("div");
+  alert.className = "alert alert-success";
+  alert.role = "alert";
+  alert.innerText = `🎉 Today is ${names}'s birthday!`;
+  document.body.prepend(alert);
 }</code></pre>
-  <aside class="notes">
-    Point out that this simulates what a real database would do on the backend.
-  </aside>
-</section>
-<section>
-  <h2>Well Done!</h2>
-  <p>You've built a real website with:</p>
-  <ul>
-    <li>HTML, CSS, JS</li>
-    <li>GitHub Pages for hosting</li>
-    <li>Bootstrap for design</li>
-    <li>Templates & JSON data</li>
-    <li>SQL — in the browser!</li>
-  </ul>
-  <p>💡 Keep exploring. You’re a web developer now.</p>
-</section>
 
+                <p>This is just like the holiday alert — but powered by SQL!</p>
+
+                <aside class="notes">
+                    You can reuse this logic for searching, filtering, and working with other data in future steps.
+                </aside>
+            </section>
+
+
+
+            <section>
+                <h2>Well Done!</h2>
+                <p>You've built a real website with:</p>
+                <ul>
+                    <li>HTML, CSS, JS</li>
+                    <li>GitHub Pages for hosting</li>
+                    <li>Bootstrap for design</li>
+                    <li>Templates & JSON data</li>
+                    <li>SQL — in the browser!</li>
+                </ul>
+            </section>
+
+        </div>
     </div>
-  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.min.js"></script>
-  <script>
-    Reveal.initialize();
-  </script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.min.js"></script>
+    <script>
+        Reveal.initialize();
+    </script>
 </body>
+
 </html>
