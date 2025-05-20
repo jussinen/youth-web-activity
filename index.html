@@ -244,8 +244,8 @@ title: "About"
             <section>
                 <h2>Get a Jekyll Template</h2>
                 <ol>
-                    <li>Visit <a href="https://github.com/pages-themes"
-                            target="_blank">github.com/pages-themes/minima</a></li>
+                    <li>Visit <a href="https://jekyll-themes.com/category/bootstrap"
+                            target="_blank">https://jekyll-themes.com/category/bootstrap</a></li>
                     <li>Click the green <strong>Code</strong> button</li>
                     <li>Select <strong>Download ZIP</strong></li>
                     <li>Extract the folder to your project (e.g. <code>jekyll-site</code>)</li>
@@ -326,6 +326,11 @@ git push</code></pre>
   { "date": "2025-01-01", "name": "New Year’s Day" }
 ]</code></pre>
 
+            </section>
+            <section>
+                <h2>Is Today a Holiday?</h2>
+                <p>Use a JSON file to list holidays, and show an alert if today matches.</p>
+
                 <p><strong>main.js:</strong></p>
                 <pre><code>document.addEventListener('DOMContentLoaded', () =&gt; {
   fetch('holidays.json')
@@ -393,6 +398,10 @@ git push</code></pre>
                     </li>
                     <li>Create a folder called <code>sqljs</code> and place both files inside it</li>
                 </ol>
+            </section>
+            <section>
+                <h2>Prepare the Page for SQL in the Browser</h2>
+                <p>We’ll use <strong>sql.js</strong> to run a database inside your browser!</p>
 
                 <h3>📄 Link sql.js in <code>index.html</code>:</h3>
                 <pre><code>&lt;script src="sqljs/sql-wasm.js"&gt;&lt;/script&gt;
