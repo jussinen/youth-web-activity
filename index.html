@@ -10,8 +10,160 @@
   <div class="reveal">
     <div class="slides">
       <section><h1>Welcome to Web Dev!</h1></section>
-      <section><h2>Step 1: What is the Internet?</h2></section>
-      <!-- More slides will go here -->
+      <section>
+        <h1>Youth Web Activity</h1>
+        <p>Build your own website in 80 minutes</p>
+        <p><small>We'll learn HTML, CSS, JS, GitHub, and even SQL!</small></p>
+      </section>
+      <section>
+        <h2>How the Internet Works</h2>
+        <ul>
+            <li><strong>Client:</strong> Your browser</li>
+            <li><strong>Server:</strong> A computer that sends you content</li>
+            <li><strong>HTTP:</strong> How browsers talk to servers</li>
+            <li><strong>DNS:</strong> Converts names to IP addresses</li>
+            <li><strong>Port 80 / 443:</strong> Web traffic (HTTP/HTTPS)</li>
+        </ul>
+        <aside class="notes">
+            Show a diagram: "Browser → DNS → Server → Response".
+            Mention http:// vs https:// and what a server is.
+        </aside>
+        </section>
+<section>
+  <h2>Local Web Server</h2>
+  <ol>
+    <li>Create a folder on your desktop</li>
+    <li>Add a file called <code>readme.txt</code></li>
+    <li>Open Command Prompt</li>
+    <li>Run <code>http-server -p 123</code></li>
+    <li>Visit <code>http://localhost:123/readme.txt</code></li>
+  </ol>
+  <aside class="notes">
+    Point out that we just turned our computer into a server!
+  </aside>
+</section>
+<section>
+  <h2>Your First Web Page</h2>
+  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;My Site&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello World!&lt;/h1&gt;
+  &lt;a href="readme.txt"&gt;Read Me&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+  <p>Save this as <code>index.html</code> and view it in your browser</p>
+</section>
+<section>
+  <h2>Style with HTML</h2>
+  <pre><code>&lt;h1 style="color: red;"&gt;Welcome!&lt;/h1&gt;
+&lt;p class="highlight"&gt;Important note&lt;/p&gt;</code></pre>
+  <p>You can use <code>style=""</code> or define <code>class</code> names for reuse</p>
+</section>
+<section>
+  <h2>Link External Files</h2>
+  <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;
+&lt;script src="main.js"&gt;&lt;/script&gt;</code></pre>
+  <p>This makes your code neater and easier to manage</p>
+</section>
+<section>
+  <h2>GitHub Pages</h2>
+  <ol>
+    <li>Create a GitHub account</li>
+    <li>Install Git on your computer</li>
+    <li>Initialize your folder with <code>git init</code></li>
+    <li>Push your code to a repo named <code>username.github.io</code></li>
+    <li>Visit <code>https://username.github.io</code></li>
+  </ol>
+  <p>Now the world can see your site!</p>
+  <aside class="notes">
+    Show them a real published student site. Mention that changes to main branch will auto-publish.
+  </aside>
+</section>
+<section>
+  <h2>Download a Template</h2>
+  <ol>
+    <li>Go to <a href="https://startbootstrap.com" target="_blank">startbootstrap.com</a></li>
+    <li>Choose a free template</li>
+    <li>Download and extract it</li>
+    <li>Replace your current HTML</li>
+    <li>Push to GitHub again</li>
+  </ol>
+  <p>Instant design upgrade 🎉</p>
+</section>
+<section>
+  <h2>What are Templates?</h2>
+  <ul>
+    <li><strong>Dynamic:</strong> Pages change using code (PHP, ASP.NET)</li>
+    <li><strong>Static:</strong> Pages are generated ahead of time (e.g. Jekyll)</li>
+  </ul>
+  <p>GitHub Pages supports <strong>Jekyll</strong> to turn Markdown into HTML.</p>
+  <pre><code>
+{% raw %}---
+title: My Page
+---
+<h1>{{ page.title }}</h1>{% endraw %}
+  </code></pre>
+  <aside class="notes">
+    Explain dynamic sites live on servers. Static sites are great for blogs and portfolios.
+  </aside>
+</section>
+<section>
+  <h2>Is Today a Holiday?</h2>
+  <ul>
+    <li>Add a <code>holidays.json</code> file</li>
+    <li>Use <code>fetch()</code> in JavaScript</li>
+    <li>If today matches, show a Bootstrap callout</li>
+  </ul>
+  <pre><code class="language-js">fetch('holidays.json')
+  .then(res => res.json())
+  .then(holidays => {
+    const today = new Date().toISOString().split('T')[0];
+    const match = holidays.find(h => h.date === today);
+    if (match) {
+      const el = document.createElement('div');
+      el.className = 'alert alert-info';
+      el.innerText = `🎉 It's ${match.name} today!`;
+      document.body.prepend(el);
+    }
+  });</code></pre>
+</section>
+<section>
+  <h2>Search Birthdays with SQL</h2>
+  <ul>
+    <li>We use <code>sql.js</code> to run SQLite in the browser</li>
+    <li>Type a name, see their birthday from a local DB</li>
+    <li>All happens <strong>without a server!</strong></li>
+  </ul>
+  <pre><code class="language-js">const db = new SQL.Database();
+db.run("CREATE TABLE people (name TEXT, birthday TEXT);");
+db.run("INSERT INTO people VALUES ('Alice', '2005-06-15');");
+
+function find(name) {
+  const stmt = db.prepare("SELECT birthday FROM people WHERE name = ?");
+  stmt.bind([name]);
+  while (stmt.step()) {
+    console.log(stmt.getAsObject()); // { birthday: '2005-06-15' }
+  }
+  stmt.free();
+}</code></pre>
+  <aside class="notes">
+    Point out that this simulates what a real database would do on the backend.
+  </aside>
+</section>
+<section>
+  <h2>Well Done!</h2>
+  <p>You've built a real website with:</p>
+  <ul>
+    <li>HTML, CSS, JS</li>
+    <li>GitHub Pages for hosting</li>
+    <li>Bootstrap for design</li>
+    <li>Templates & JSON data</li>
+    <li>SQL — in the browser!</li>
+  </ul>
+  <p>💡 Keep exploring. You’re a web developer now.</p>
+</section>
+
     </div>
   </div>
 
